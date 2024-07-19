@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -47,9 +48,9 @@ Route::get('/jobs/{id}', function ($id) {
         ]
     ];
 
-    \Illuminate\Support\Arr::first($jobs, fn($job)=> $job['id'] = $id);
+    $job = Arr::first($jobs, fn($job)=> $job['id'] == $id);
 
-    return view('contact');
+    return view('job', ['job' => $job]);
 });
 
 Route::get('/contact', function () {

@@ -6,10 +6,10 @@
     <ul>
         @foreach ($jobs as $job)
             <li>
-                <a href="/jobs/3">
-                    <li><strong>{{ $job['title'] }}:</strong> Pays {{ $job['salary']}} per year.</li>
+                <a href="/jobs/{{ $job['id'] }}" class=" hover:text-blue-500 hover:underline">
+                    <strong>{{ $job['title'] }}:</strong> Pays {{ $job['salary'] }} per year.
                 </a>
-                </li>
-            @endforeach
-        </ul>
+            </li>
+        @endforeach
+    </ul>
 </x-layout>
