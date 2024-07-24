@@ -13,4 +13,9 @@ class Job extends Model {
     protected $table = 'job_listings';
 
     protected $fillable = ['title', 'salary'];
+
+    public function employers()
+    {
+        return $this->belongsTo(Employer::class);
+    }
 }
